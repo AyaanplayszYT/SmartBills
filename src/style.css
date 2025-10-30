@@ -1,0 +1,138 @@
+:root{
+  --bg: #f7fafd;
+  --card: #fff;
+  --muted: #6c7a89;
+  --accent: #009688;
+  --glass: #fff;
+  --radius: 16px;
+  --shadow: 0 8px 32px rgba(15,20,30,0.12), 0 1.5px 8px rgba(0,191,174,0.08);
+  --max-width: 1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  --blur: 18px;
+  --transition: all 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* REMOVE DARK MODE */
+body.dark, html.dark, .app.dark, .sidebar.dark, .main.dark, .card.dark, .modal-panel.dark {
+  all: unset !important;
+}
+
+/* Fix search input to always be white */
+.topbar input {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #e0e0e0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#f5f6fa;-webkit-font-smoothing:antialiased;transition:var(--transition)}
+.app{display:flex;min-height:100vh;max-width:var(--max-width);margin:32px auto 24px auto;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--glass);backdrop-filter:blur(var(--blur));transition:var(--transition)}
+.sidebar{width:240px;min-width:200px;padding:24px 18px 18px 18px;background:var(--glass);backdrop-filter:blur(var(--blur));border-right:1px solid rgba(0,0,0,0.04);display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(0,0,0,0.04);transition:var(--transition)}
+.logo{font-weight:700;font-size:18px;margin-bottom:12px}
+.sidebar nav{display:flex;flex-direction:column;gap:6px}
+.nav-btn{background:transparent;border:none;padding:10px 12px;text-align:left;border-radius:8px;font-weight:600;color:var(--muted);cursor:pointer;transition:var(--transition)}
+.nav-btn.active{background:rgba(0,121,107,0.12);color:var(--accent);box-shadow:0 2px 8px rgba(0,191,174,0.08)}
+.sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+
+/* main */
+.main{flex:1;padding:24px 24px 18px 24px;transition:var(--transition)}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;backdrop-filter:blur(8px);background:var(--glass);border-radius:calc(var(--radius) - 2px);box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:12px 24px;transition:var(--transition)}
+.topbar input{width:340px;max-width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:var(--card);transition:var(--transition);font-size:16px}
+.icon-btn{background:transparent;border:1px solid rgba(0,0,0,0.10);padding:8px 10px;border-radius:10px;cursor:pointer;transition:var(--transition);font-size:18px}
+
+
+/* cards + layout */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.card{background:var(--card);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);transition:var(--transition);backdrop-filter:blur(2px)}
+.card.full{grid-column:1/-1}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:transparent;padding:10px 0;border-radius:10px}
+.stat-title{color:var(--muted);font-size:14px}
+.stat-value{font-weight:700;font-size:22px;margin-top:6px}
+.howto ol{padding-left:18px;color:var(--muted);font-size:15px}
+.reminders .muted{min-height:34px}
+
+/* lists */
+.list{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.item{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03));box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+.item .meta{color:var(--muted);font-size:13px}
+.row{display:flex;gap:12px;align-items:center}
+.row-between{display:flex;justify-content:space-between;align-items:center}
+
+/* buttons */
+.btn{padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700;transition:var(--transition);font-size:15px}
+.btn.primary{background:var(--accent);color:#10151b;box-shadow:0 2px 8px rgba(38,255,230,0.08)}
+.btn.outline{background:transparent;border:1.5px solid var(--accent);color:var(--accent);background:rgba(38,255,230,0.04)}
+.btn.ghost{background:transparent;border:1.5px dashed var(--accent);color:var(--accent);background:rgba(38,255,230,0.03)}
+.btn.subtle{background:#18202b;border:1px solid #26ffe6;color:#26ffe6}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(4,6,8,0.32);z-index:60;backdrop-filter:blur(4px)}
+.modal .modal-panel{background:var(--card);padding:22px 24px;border-radius:var(--radius);width:420px;box-shadow:var(--shadow);transition:var(--transition);color:#eaf6fb}
+.modal input,.modal textarea,.modal select{width:100%;padding:12px;border-radius:10px;margin-top:8px;border:1.5px solid var(--accent);background:var(--card);color:inherit;font-size:15px}
+.modal-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:18px}
+
+/* invoice PDF template */
+.invoice{font-family:Inter,Arial;margin:18px;padding:18px;background:var(--card);color:#eaf6fb;border-radius:10px;box-shadow:0 2px 12px rgba(38,255,230,0.08)}
+.inv-head{display:flex;justify-content:space-between;align-items:flex-start}
+.inv-head h2{margin:0}
+#pdfBody{margin-top:12px}
+
+/* helpers */
+.muted{color:var(--muted);opacity:0.95}
+.tiny{font-size:12px;color:var(--muted);opacity:0.8}
+.danger{color:#b32d2d}
+
+/* responsive */
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .topbar input{width:180px}
+  .main{padding:12px}
+}
+@media (max-width:720px){
+  .app{flex-direction:column;margin:4px}
+  .sidebar{width:100%;min-width:0;flex-direction:row;gap:6px;padding:6px 2px;align-items:center}
+  .main{padding:4px}
+  .grid{grid-template-columns:1fr}
+  .topbar input{width:90px}
+}
+
+.watermark {
+  position: fixed;
+  bottom: 16px;
+  right: 24px;
+  font-size: 14px;
+  color: #b0bec5;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 9999;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.invoice .watermark {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  font-size: 13px;
+  color: #b0bec5;
+  opacity: 0.35;
+}
+
+body {
+  background: #f5f6fa;
+  /* Remove any gradient or conflicting background colors */
+  color: #222;
+}
+
+.app-container {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.1);
+  border-radius: 24px;
+}
+
+/* Remove conflicting backgrounds from other sections */
+.settings, .dashboard, .sidebar, .main-content {
+  background: transparent;
+}
