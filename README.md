@@ -39,8 +39,3 @@ A modern, professional frontend web app for managing invoices and payments. Full
 - Generate PDF for any invoice
 - Batch download all invoices as PDFs
 
-## Branding
-- Watermark: "made by Mistiz911" appears on every page and invoice PDF
-
-## License
-MIT
