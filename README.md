@@ -12,7 +12,6 @@ A modern, professional frontend web app for managing invoices and payments. Full
 - Reminders for upcoming due invoices
 - Local storage only (no server)
 - Responsive design for all devices
-- Watermark branding: "made by Mistiz911"
 
 ## Usage
 1. **Install dependencies:**
@@ -39,3 +38,4 @@ A modern, professional frontend web app for managing invoices and payments. Full
 - Generate PDF for any invoice
 - Batch download all invoices as PDFs
 
+<img width="825" height="817" alt="image" src="https://github.com/user-attachments/assets/bb831476-5d64-403f-a9aa-0640ff370dc8" />
