@@ -37,5 +37,7 @@ A modern, professional frontend web app for managing invoices and payments. Full
 ## PDF Generation
 - Generate PDF for any invoice
 - Batch download all invoices as PDFs
+  
+<img width="2655" height="3094" alt="smartbillsgen netlify app_" src="https://github.com/user-attachments/assets/bdad328c-4ef3-4eb5-a996-2e451b170f31" />
 
-<img width="825" height="817" alt="image" src="https://github.com/user-attachments/assets/bb831476-5d64-403f-a9aa-0640ff370dc8" />
+
